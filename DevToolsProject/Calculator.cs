@@ -42,6 +42,12 @@ namespace DevToolsProject
                 case '/':
                     Operation = new Division();
                     break;
+                case '^':
+                    Operation = new Pow();
+                    break;
+                case '#':
+                    Operation = new Root();
+                    break;
                 default:
                     Operation = null;
                     break;
