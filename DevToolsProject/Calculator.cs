@@ -20,38 +20,40 @@ namespace DevToolsProject
         }
         /// <summary>Initializes a new instance of the <see cref="Calculator"/> class.</summary>
         /// <param name="symbol">The symbol of the first operation.</param>
-        public Calculator(char symbol)
+        public Calculator(OperationsEnum operation)
         {
-            ChangeOperation(symbol);
+            ChangeOperation(operation);
         }
         /// <summary>Changes the operation.</summary>
         /// <param name="symbol">The symbol of operation for changing.</param>
-        public void ChangeOperation(char symbol)
+        public void ChangeOperation(OperationsEnum operation)
         {
-            switch (symbol)
-            {
-                case '+':
-                    Operation = new Addition();
-                    break;
-                case '-':
-                    Operation = new Substraction();
-                    break;
-                case '*':
-                    Operation = new Multiplication();
-                    break;
-                case '/':
-                    Operation = new Division();
-                    break;
-                case '^':
-                    Operation = new Pow();
-                    break;
-                case '#':
-                    Operation = new Root();
-                    break;
-                default:
-                    Operation = null;
-                    break;
-            }
+            //switch (symbol)
+            //{
+            //    case '+':
+            //        Operation = new Addition();
+            //        break;
+            //    case '-':
+            //        Operation = new Substraction();
+            //        break;
+            //    case '*':
+            //        Operation = new Multiplication();
+            //        break;
+            //    case '/':
+            //        Operation = new Division();
+            //        break;
+            //    case '^':
+            //        Operation = new Pow();
+            //        break;
+            //    case '#':
+            //        Operation = new Root();
+            //        break;
+            //    default:
+            //        Operation = null;
+            //        break;
+            //}
+
+            Operation = Operations.GetOperation(operation);
         }
 
         /// <summary>Deletes the answer and resets it to zero.</summary>
