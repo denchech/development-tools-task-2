@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.IO;
 using System.Text;
 
 namespace DevToolsProject
@@ -28,31 +31,6 @@ namespace DevToolsProject
         /// <param name="symbol">The symbol of operation for changing.</param>
         public void ChangeOperation(OperationsEnum operation)
         {
-            //switch (symbol)
-            //{
-            //    case '+':
-            //        Operation = new Addition();
-            //        break;
-            //    case '-':
-            //        Operation = new Substraction();
-            //        break;
-            //    case '*':
-            //        Operation = new Multiplication();
-            //        break;
-            //    case '/':
-            //        Operation = new Division();
-            //        break;
-            //    case '^':
-            //        Operation = new Pow();
-            //        break;
-            //    case '#':
-            //        Operation = new Root();
-            //        break;
-            //    default:
-            //        Operation = null;
-            //        break;
-            //}
-
             Operation = Operations.GetOperation(operation);
         }
 
@@ -73,5 +51,11 @@ namespace DevToolsProject
             return Answer;
         }
 
+        public void SaveAnswer()
+        {            
+            string file = ConfigurationManager.AppSettings.Get("SaveFile");
+            var jsonEncode = JsonConvert.SerializeObject(new Answer(Answer), Formatting.Indented);
+            File.AppendAllText(file, jsonEncode);
+        }
     }
 }
