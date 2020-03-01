@@ -10,11 +10,13 @@ namespace UnitTestDevToolsProject
     public class CalculatorTest
     {
         [TestMethod]
-        [DataRow('+', typeof(Addition))]
-        [DataRow('-', typeof(Substraction))]
-        [DataRow('*', typeof(Multiplication))]
-        [DataRow('/', typeof(Division))]
-        public void TestChangeOperation(char input, Type expected)
+        [DataRow(OperationsEnum.Addition, typeof(Addition))]
+        [DataRow(OperationsEnum.Substraction, typeof(Substraction))]
+        [DataRow(OperationsEnum.Multiplication, typeof(Multiplication))]
+        [DataRow(OperationsEnum.Division, typeof(Division))]
+        [DataRow(OperationsEnum.Root, typeof(Root))]
+        [DataRow(OperationsEnum.Pow, typeof(Pow))]
+        public void TestChangeOperation(OperationsEnum input, Type expected)
         {
             var calc = new Calculator();
             
@@ -34,11 +36,13 @@ namespace UnitTestDevToolsProject
         }
 
         [TestMethod]
-        [DataRow('+', 1.2)]
-        [DataRow('-', -1.2)]
-        [DataRow('*', 0.0)]
-        [DataRow('/', 0.0)]
-        public void TestCalculate(char input, double expected)
+        [DataRow(OperationsEnum.Addition, 1.2)]
+        [DataRow(OperationsEnum.Substraction, -1.2)]
+        [DataRow(OperationsEnum.Multiplication, 0.0)]
+        [DataRow(OperationsEnum.Division, 0.0)]
+        [DataRow(OperationsEnum.Root, 0.0)]
+        [DataRow(OperationsEnum.Pow, 0.0)]
+        public void TestCalculate(OperationsEnum input, double expected)
         {
             var calc = new Calculator(input);
             
