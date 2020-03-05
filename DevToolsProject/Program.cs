@@ -14,6 +14,7 @@ namespace DevToolsProject
             StreamWriter sw = new StreamWriter("TextFile1.txt");
             sw.Write("something");
             sw.Close();
+            Console.WriteLine("Hello World");
         }
     }
 }
