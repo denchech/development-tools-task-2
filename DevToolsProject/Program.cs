@@ -10,10 +10,10 @@ namespace DevToolsProject
         static void Main(string[] args)
         {
             Calculator x = new Calculator();
-            //x.SaveAnswer();
             StreamWriter sw = new StreamWriter("TextFile1.txt");
             sw.Write("something");
             sw.Close();
+            Console.WriteLine("Hello World");
         }
     }
 }
