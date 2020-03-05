@@ -7,6 +7,7 @@ A simple calculator, written for understanding basic git functions
 You have to install 
 - [System.Configuration.ConfigurationManager](https://github.com/dotnet/corefx)
 - [Newtonsoft.Json](https://www.newtonsoft.com/json)
+
 from NuGet manager
 
 ## Usage
