@@ -6,7 +6,12 @@ using System.Text;
 namespace DevToolsProject
 {
     class Program
-    {        
+    {
+        public static void NewMethod()
+        {
+            Console.WriteLine("New method to test Git Kraken");
+        }
+
         static void Main(string[] args)
         {
             Calculator x = new Calculator();
